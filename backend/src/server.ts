@@ -20,10 +20,16 @@ const JWT_SECRET = process.env.JWT_SECRET || 'liferpg_ultra_secure_dungeon_maste
 
 app.use(express.json());
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:3000', 'http://127.0.0.1:5173','https://levio12.netlify.app/'],
+  origin: [
+    'http://localhost:5173', 
+    'http://localhost:3000', 
+    'http://127.0.0.1:5173',
+    'https://levio26.netlify.app' // <-- Fixed the number and removed the trailing slash
+  ],
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
-
 // ─── Auth Types ──────────────────────────────────────────
 interface AuthenticatedRequest extends Request {
   userId?: string;
