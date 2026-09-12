@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   X,
@@ -112,25 +112,25 @@ export const ShopModal: React.FC<ShopModalProps> = ({
     const common = 'w-5 h-5';
     switch (iconName) {
       case 'Sword':
-        return <Sword className={`${common} text-fuchsia-500`} />;
+        return <Sword className={`${common} text-amber-500`} />;
       case 'BookOpen':
-        return <BookOpen className={`${common} text-violet-500`} />;
+        return <BookOpen className={`${common} text-orange-500`} />;
       case 'Sparkles':
-        return <Sparkles className={`${common} text-pink-500`} />;
+        return <Sparkles className={`${common} text-yellow-500`} />;
       case 'Crown':
-        return <Crown className={`${common} text-cyan-500`} />;
+        return <Crown className={`${common} text-amber-500`} />;
       case 'Flame':
-        return <Flame className={`${common} text-fuchsia-500`} />;
+        return <Flame className={`${common} text-orange-500`} />;
       case 'Cpu':
-        return <Cpu className={`${common} text-cyan-500`} />;
+        return <Cpu className={`${common} text-amber-500`} />;
       case 'Coffee':
-        return <Coffee className={`${common} text-violet-500`} />;
+        return <Coffee className={`${common} text-yellow-500`} />;
       case 'Shield':
-        return <Shield className={`${common} text-cyan-500`} />;
+        return <Shield className={`${common} text-orange-500`} />;
       case 'Palette':
-        return <Palette className={`${common} text-pink-500`} />;
+        return <Palette className={`${common} text-amber-500`} />;
       default:
-        return <Sparkle className={`${common} text-violet-500`} />;
+        return <Sparkle className={`${common} text-orange-500`} />;
     }
   };
 
@@ -139,11 +139,11 @@ export const ShopModal: React.FC<ShopModalProps> = ({
       case 'Common':
         return 'text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800';
       case 'Rare':
-        return 'text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800 bg-cyan-50 dark:bg-cyan-950/40';
+        return 'text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/40';
       case 'Epic':
-        return 'text-violet-700 dark:text-violet-300 border-violet-200 dark:border-violet-800 bg-violet-50 dark:bg-violet-950/40';
+        return 'text-orange-700 dark:text-orange-300 border-orange-200 dark:border-orange-800 bg-orange-50 dark:bg-orange-950/40';
       case 'Legendary':
-        return 'text-fuchsia-700 dark:text-fuchsia-300 border-fuchsia-200 dark:border-fuchsia-800 bg-fuchsia-50 dark:bg-fuchsia-950/40';
+        return 'text-yellow-700 dark:text-yellow-300 border-yellow-200 dark:border-yellow-800 bg-yellow-50 dark:bg-yellow-950/40';
       default:
         return '';
     }
@@ -175,13 +175,13 @@ export const ShopModal: React.FC<ShopModalProps> = ({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.96, y: 16 }}
           transition={{ duration: 0.2 }}
-          className="w-full max-w-3xl max-h-[90vh] overflow-hidden rounded-3xl border border-violet-200/70 dark:border-violet-900/60 bg-white/95 dark:bg-slate-950/95 shadow-2xl shadow-violet-950/20 relative flex flex-col"
+          className="w-full max-w-3xl max-h-[90vh] overflow-hidden rounded-3xl border border-amber-200/70 dark:border-amber-900/60 bg-white/95 dark:bg-slate-950/95 shadow-2xl shadow-amber-950/20 relative flex flex-col"
         >
           {/* Header */}
-          <div className="px-5 sm:px-7 pt-5 pb-4 border-b border-slate-200/80 dark:border-slate-800 bg-gradient-to-r from-fuchsia-50 via-violet-50 to-cyan-50 dark:from-fuchsia-950/25 dark:via-violet-950/25 dark:to-cyan-950/25">
+          <div className="px-5 sm:px-7 pt-5 pb-4 border-b border-slate-200/80 dark:border-slate-800 bg-gradient-to-r from-amber-50 via-orange-50 to-yellow-50 dark:from-amber-950/25 dark:via-orange-950/25 dark:to-yellow-950/25">
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-2xl flex items-center justify-center bg-gradient-to-br from-fuchsia-500 via-violet-500 to-cyan-500 text-white shadow-lg shadow-violet-500/20">
+                <div className="w-11 h-11 rounded-2xl flex items-center justify-center bg-gradient-to-br from-amber-500 via-orange-500 to-yellow-500 text-white shadow-lg shadow-orange-500/20">
                   <ShoppingBag className="w-5 h-5" />
                 </div>
                 <div>
@@ -195,9 +195,9 @@ export const ShopModal: React.FC<ShopModalProps> = ({
               </div>
 
               <div className="flex items-center gap-2 shrink-0">
-                <div className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-violet-100 dark:bg-violet-950/40 border border-violet-200 dark:border-violet-800">
-                  <Coins className="w-4 h-4 text-violet-600 dark:text-violet-300" />
-                  <span className="text-sm font-extrabold text-violet-700 dark:text-violet-200">
+                <div className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-amber-100 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800">
+                  <Coins className="w-4 h-4 text-amber-600 dark:text-amber-300" />
+                  <span className="text-sm font-extrabold text-amber-700 dark:text-amber-200">
                     {character.gold} G
                   </span>
                 </div>
@@ -219,8 +219,8 @@ export const ShopModal: React.FC<ShopModalProps> = ({
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition cursor-pointer border ${
                     activeTab === tab.id
-                      ? 'border-transparent bg-gradient-to-r from-fuchsia-500 via-violet-500 to-cyan-500 text-white shadow-md shadow-violet-500/20'
-                      : 'border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 text-slate-600 dark:text-slate-300 hover:border-violet-300 dark:hover:border-violet-700'
+                      ? 'border-transparent bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500 text-white shadow-md shadow-orange-500/20'
+                      : 'border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 text-slate-600 dark:text-slate-300 hover:border-amber-300 dark:hover:border-amber-700'
                   }`}
                 >
                   {tab.label}
@@ -259,14 +259,14 @@ export const ShopModal: React.FC<ShopModalProps> = ({
                       layout
                       className={`group p-4 rounded-2xl border flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition ${
                         equipped
-                          ? 'border-violet-400 dark:border-violet-700 bg-gradient-to-r from-fuchsia-50 via-violet-50 to-cyan-50 dark:from-fuchsia-950/20 dark:via-violet-950/20 dark:to-cyan-950/20'
+                          ? 'border-amber-400 dark:border-amber-600 bg-gradient-to-r from-amber-50 via-orange-50 to-yellow-50 dark:from-amber-950/20 dark:via-orange-950/20 dark:to-yellow-950/20'
                           : owned
                             ? 'border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/70'
-                            : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-violet-300 dark:hover:border-violet-800 hover:shadow-md hover:shadow-violet-500/5'
+                            : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-amber-300 dark:hover:border-amber-800 hover:shadow-md hover:shadow-orange-500/5'
                       }`}
                     >
                       <div className="flex items-start gap-3.5 min-w-0">
-                        <div className="w-12 h-12 shrink-0 rounded-2xl bg-gradient-to-br from-fuchsia-100 via-violet-100 to-cyan-100 dark:from-fuchsia-950/50 dark:via-violet-950/50 dark:to-cyan-950/50 border border-violet-200 dark:border-violet-800 flex items-center justify-center">
+                        <div className="w-12 h-12 shrink-0 rounded-2xl bg-gradient-to-br from-amber-100 via-orange-100 to-yellow-100 dark:from-amber-950/50 dark:via-orange-950/50 dark:to-yellow-950/50 border border-amber-200 dark:border-amber-800 flex items-center justify-center">
                           {getItemIcon(item.icon)}
                         </div>
 
@@ -285,7 +285,7 @@ export const ShopModal: React.FC<ShopModalProps> = ({
                             {item.description}
                           </p>
                           {item.statBoost && (
-                            <div className="inline-flex mt-2 px-2 py-1 rounded-lg bg-violet-100/80 dark:bg-violet-950/40 text-[10px] font-bold text-violet-700 dark:text-violet-300">
+                            <div className="inline-flex mt-2 px-2 py-1 rounded-lg bg-amber-100/80 dark:bg-amber-950/40 text-[10px] font-bold text-amber-700 dark:text-amber-300">
                               Perk: {item.statBoost}
                             </div>
                           )}
@@ -314,7 +314,7 @@ export const ShopModal: React.FC<ShopModalProps> = ({
                             disabled={!canAfford || purchasingId === item.id}
                             className={`px-4 py-2 rounded-xl text-xs font-extrabold flex items-center gap-1.5 transition ${
                               canAfford
-                                ? 'bg-gradient-to-r from-fuchsia-500 via-violet-500 to-cyan-500 text-white hover:scale-[1.02] shadow-md shadow-violet-500/15 cursor-pointer'
+                                ? 'bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500 text-white hover:scale-[1.02] shadow-md shadow-orange-500/15 cursor-pointer'
                                 : 'bg-slate-100 dark:bg-slate-800 text-slate-400 border border-slate-200 dark:border-slate-700 cursor-not-allowed'
                             }`}
                           >
@@ -329,7 +329,7 @@ export const ShopModal: React.FC<ShopModalProps> = ({
               </div>
             ) : (
               <div className="py-14 text-center">
-                <div className="mx-auto w-14 h-14 rounded-2xl bg-violet-100 dark:bg-violet-950/40 flex items-center justify-center text-violet-500">
+                <div className="mx-auto w-14 h-14 rounded-2xl bg-amber-100 dark:bg-amber-950/40 flex items-center justify-center text-amber-500">
                   <ShoppingBag className="w-6 h-6" />
                 </div>
                 <p className="mt-3 text-sm font-bold text-slate-700 dark:text-slate-200">
@@ -346,7 +346,7 @@ export const ShopModal: React.FC<ShopModalProps> = ({
             <span>Complete quests to earn more gold.</span>
             <button
               onClick={onClose}
-              className="font-bold text-violet-600 dark:text-violet-300 hover:text-fuchsia-600 dark:hover:text-fuchsia-300 transition cursor-pointer"
+              className="font-bold text-amber-600 dark:text-amber-400 hover:text-orange-600 dark:hover:text-orange-300 transition cursor-pointer"
             >
               Close Store
             </button>
