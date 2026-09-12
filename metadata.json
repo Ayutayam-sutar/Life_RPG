@@ -1,0 +1,6 @@
+{
+  "name": "Life RPG - Gamified Productivity Engine",
+  "description": "A gamified productivity engine that turns daily habits and tasks into rewarding quests with real-time progression, attributes, economy, and streaks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
