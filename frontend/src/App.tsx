@@ -268,7 +268,7 @@ export default function App() {
             </div>
             <div>
               <span className="font-cinzel text-base font-black text-slate-900 dark:text-slate-50 tracking-wider block">
-                LIFE RPG
+                LEVIO
               </span>
               <span className="text-[10px] text-amber-700 dark:text-amber-500 font-bold uppercase tracking-wider block -mt-1">
                 Gamify Productivity
