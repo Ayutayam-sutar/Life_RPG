@@ -314,7 +314,7 @@ export const CharacterDashboard: React.FC<CharacterDashboardProps> = ({ characte
         })}
       </div>
 
-      {/* Evolution Strip (Hidden on Mobile) */}
+      {/* Evolution Strip - FIXED UI/UX */}
       <div className="hidden lg:block mt-10 relative z-10">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
@@ -326,28 +326,48 @@ export const CharacterDashboard: React.FC<CharacterDashboardProps> = ({ characte
         
         <div className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide">
           {stages.map((s, i) => {
-            const unlocked = character.level >= i + 1;
-            const active = character.level === i + 1;
+            const levelNum = i + 1;
+            // 3 Explicit States
+            const isCompleted = character.level > levelNum; 
+            const isCurrent = character.level === levelNum;
+            const isLocked = character.level < levelNum;
+            
             return (
               <div 
                 key={i} 
-                className={`flex-shrink-0 w-24 p-3 rounded-2xl border transition-all ${
-                  active ? 'bg-amber-50 dark:bg-amber-900/20 border-amber-300 dark:border-amber-700 shadow-sm' 
-                  : unlocked ? 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 opacity-70' 
-                  : 'bg-slate-50 dark:bg-slate-800/40 border-slate-100 dark:border-slate-800 opacity-40 grayscale'
+                className={`flex-shrink-0 w-24 p-3 rounded-2xl border transition-all duration-300 ${
+                  isCurrent 
+                    ? 'bg-amber-50 dark:bg-amber-900/20 border-amber-400 dark:border-amber-500 shadow-md scale-105' 
+                  : isCompleted 
+                    ? 'bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-500 shadow-sm opacity-100' 
+                  : 'bg-slate-50/50 dark:bg-slate-800/30 border-slate-100 dark:border-slate-800/50 opacity-40 grayscale'
                 }`}
-                title={unlocked ? `Level ${i + 1}: ${s[1]}` : `Unlock at Level ${i + 1}`}
+                title={!isLocked ? `Level ${levelNum}: ${s[1]}` : `Unlock at Level ${levelNum}`}
               >
-                <div className="w-10 h-10 mx-auto bg-slate-100 dark:bg-slate-700 rounded-full flex items-center justify-center text-lg mb-2 relative shadow-inner">
+                <div className={`w-10 h-10 mx-auto rounded-full flex items-center justify-center text-lg mb-2 relative shadow-inner ${
+                  isCurrent ? 'bg-amber-100 dark:bg-amber-500/20' 
+                  : isCompleted ? 'bg-slate-100 dark:bg-slate-700' 
+                  : 'bg-slate-100 dark:bg-slate-800'
+                }`}>
                   {s[2]}
-                  {!unlocked && (
-                    <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-slate-800 text-white rounded-full flex items-center justify-center">
+                  {isLocked && (
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-slate-800 dark:bg-slate-900 text-white rounded-full flex items-center justify-center shadow-sm">
                       <Lock className="w-2.5 h-2.5" />
                     </div>
                   )}
                 </div>
-                <div className="text-center text-[10px] font-bold text-slate-500 dark:text-slate-400 mb-0.5">LVL {i + 1}</div>
-                <div className={`text-center text-[11px] font-bold truncate ${active ? 'text-amber-700 dark:text-amber-400' : 'text-slate-700 dark:text-slate-300'}`}>
+                <div className={`text-center text-[10px] font-black tracking-wider mb-0.5 ${
+                  isCurrent ? 'text-amber-600 dark:text-amber-500' 
+                  : isCompleted ? 'text-slate-500 dark:text-slate-400' 
+                  : 'text-slate-400 dark:text-slate-600'
+                }`}>
+                  LVL {levelNum}
+                </div>
+                <div className={`text-center text-[11px] font-bold truncate ${
+                  isCurrent ? 'text-amber-700 dark:text-amber-400' 
+                  : isCompleted ? 'text-slate-900 dark:text-white' 
+                  : 'text-slate-500 dark:text-slate-500'
+                }`}>
                   {s[0]}
                 </div>
               </div>
